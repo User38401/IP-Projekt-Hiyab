@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GeoQuiz</title>
+    <style>
+        body {
+            background: fixed;
+            background-image: linear-gradient(45deg, rgb(165, 79, 79), rgb(103, 0, 151));
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4vw;
+            margin: 20px 0;
+        }
+
+        .button-container {
+           margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button {
+            margin-bottom: 20px;
+            background-color: black;
+            color: white;
+            width: 80vw;
+            max-width: 200px;
+            height: 8vh;
+            border: solid rgb(0, 78, 156);
+            border-radius: 10px;
+            margin: 10px 0;
+            font-size: 2vw;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>GeoQuiz</h1>
+    </div>
+
+    <div class="button-container">
+        <button><a href="spiele/flaggen-spiel.html" onclick="resetGame();">Flagge erraten</a></button>
+        <button><a href="spiele/haupstädte-spiel.html" onclick="resetGame();">Haupstädte</a></button>
+    </div>
+
+    <script>
+        function resetGame() {
+            sessionStorage.setItem("points", 0);
+            sessionStorage.setItem("storedFlags", "");
+            sessionStorage.setItem("storedCapitals", "");
+            sessionStorage.removeItem("limit");
+        }
+    </script>
+</body>
+</html>
